@@ -2,17 +2,20 @@ import smtplib
 from email.mime.text import MIMEText
 from email.utils import formataddr
 from email.header import Header
+from email.mime.multipart import MIMEMultipart
 
 
-def send(receivers, content, subject):
+def send(receivers, subject, content, is_html):
     mail_user="leetcodegroup@qq.com"
     mail_pass="uhkogqwtiuwrdihj"
     sender = 'leetcodegroup@qq.com'
 
-    message = MIMEText(content, 'plain', 'utf-8')
+    if is_html:
+        message = MIMEMultipart()
+        message.attach(MIMEText(content, 'html', 'utf-8'))
+    else:
+        message = MIMEText(content, 'plain', 'utf-8')
     message['From'] = formataddr(["leetcode交流群通知", sender])
-    # message['To'] = formataddr(["交流群成员",  receivers[0]])
-    # message['From'] = Header('leetcode交流群通知', 'utf-8')
     message['To'] = Header('交流群成员', 'utf-8')
     message['Subject'] = subject
 
@@ -27,5 +30,6 @@ def send(receivers, content, subject):
 
 
 if __name__ == '__main__':
-
+    body = '''1'''
+    send(["934422900@qq.com"], "!23", body, True)
     print("done")
