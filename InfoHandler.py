@@ -110,9 +110,5 @@ def get_formatted_info():
 
 
 
-
-
-
-
 if __name__ == '__main__':
     print("done")

@@ -7,11 +7,11 @@ import time
 
 
 def daily_job():
-    DBManager.update_yestoday()
     DBManager.update_today()
     content = InfoHandler.pack_daily_content()
     receivers = DBManager.get_auditors()
     MailSender.send(receivers, 'Daily LeetCode Notice', content, True)
+    DBManager.update_yestoday()
     print("daily job done")
     return
 
