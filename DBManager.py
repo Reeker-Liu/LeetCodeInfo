@@ -3,14 +3,14 @@ import InfoGetter
 
 '''
 TABLE USER
-(id, uid, isauditor, solved1, solved2, email)
+(id, uid, isauditor, solved1, solved2, email, iscn)
 '''
 
 def get_data():
     conn = sqlite3.connect('info.db')
     cursor = conn.cursor()
-    cursor = cursor.execute("SELECT uid, email, solved1, solved2, isauditor  FROM USER")
-    infos = cursor.fetchall() # [uid, email, solved1, solved2, is_auditor]
+    cursor = cursor.execute("SELECT uid, email, solved1, solved2, isauditor, iscn  FROM USER")
+    infos = cursor.fetchall() # [uid, email, solved1, solved2, is_auditor, is_cn]
     return infos
 
 
@@ -35,11 +35,11 @@ def update_yestoday():
 def update_today():
     conn = sqlite3.connect('info.db')
     cursor = conn.cursor()
-    cursor = cursor.execute("SELECT uid FROM USER WHERE isauditor = 0")
-    uids = [row[0] for row in cursor.fetchall()]
+    cursor = cursor.execute("SELECT uid, iscn FROM USER WHERE isauditor = 0")
+    uids = cursor.fetchall()
     cursor.close()
     for uid in uids:
-        info = InfoGetter.get_info(uid)
+        info = InfoGetter.get_info(uid[0], uid[1])
         if info is None:
             continue
         conn.execute("UPDATE USER set solved2 = ? where uid = ?;", [info[1], info[0]])
@@ -50,17 +50,17 @@ def update_today():
     return
 
 
-def logon_user(uid, email, is_auditor):
+def logon_user(uid, email, is_auditor, is_cn):
     conn = sqlite3.connect('info.db')
     cursor = conn.cursor()
     cursor = cursor.execute("SELECT *  FROM USER WHERE email = ?;", [email])
     rows = cursor.fetchall()
     cursor.close()
     if len(rows) > 0:
-        conn.execute("UPDATE USER set uid = ?, isauditor = ? where email = ?;", [uid, str(int(is_auditor)), email])
+        conn.execute("UPDATE USER set uid = ?, isauditor = ?, iscn = ? where email = ?;", [uid, str(int(is_auditor)), str(int(is_cn)), email])
         print("user with email(" + email + ") already exists, update the settings (" + uid + ", " + email + ") done")
     else:
-        conn.execute("INSERT INTO USER (uid, isauditor, email) VALUES (?, ?, ?);", [uid, str(int(is_auditor)), email])
+        conn.execute("INSERT INTO USER (uid, isauditor, iscn, email) VALUES (?, ?, ?, ?);", [uid, str(int(is_auditor)),  str(int(is_cn)), email])
         print("log on (" + uid + ", " + email + ") done")
     conn.commit()
     conn.close()
@@ -84,12 +84,8 @@ def create_table():
     isauditor BOOLEAN DEFAULT 1, \
     solved1 INT NOT NULL DEFAULT 0,\
     solved2 INT NOT NULL DEFAULT 0,\
-    email VARCHAR(25) NOT NULL);")
-    # conn.execute("CREATE TABLE IF NOT EXISTS RECORD\
-    # (id INTEGER PRIMARY KEY,\
-    # solved1 INT NOT NULL,\
-    # solved2 INT NOT NULL,\
-    # FOREIGN KEY(id) REFERENCES USER(id));")
+    email VARCHAR(25) NOT NULL,\
+    iscn BOOLEAN DEFAULT 0);")
     print("create table done")
     conn.commit()
     conn.close()

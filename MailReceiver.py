@@ -58,11 +58,12 @@ def handle_mail(sender, subject):
     print("handle mail - " + subject + " from " + sender)
     if elements[0] == "DY":
         if len(elements) == 2:
-            DBManager.logon_user(elements[1], sender, 0)
-            MailSender.send(sender, 'Reply to DY', 'register successfully', False)
+            DBManager.logon_user(elements[1], sender, 0, 0)
+        elif len(elements) == 3 and elements[2] == "cn":
+            DBManager.logon_user(elements[1], sender, 0, 1)
         else:
             DBManager.logon_user(elements[0], sender, 1)
-            MailSender.send(sender, 'Reply to DY', 'register successfully as an auditor', False)
+        MailSender.send(sender, 'Reply to DY', 'register successfully', False)
     elif elements[0] == "TD":
         DBManager.logoff_user(sender)
         MailSender.send(sender, 'Reply to TD', 'quit successfully', False)
