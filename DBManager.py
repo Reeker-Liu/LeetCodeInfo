@@ -14,6 +14,15 @@ def get_data():
     return infos
 
 
+def get_auditors():
+    conn = sqlite3.connect('info.db')
+    cursor = conn.cursor()
+    cursor = cursor.execute("SELECT email FROM USER")
+    auditors = cursor.fetchall()
+    auditors = [row[0] for row in auditors]
+    return auditors
+
+
 def update_yestoday():
     conn = sqlite3.connect('info.db')
     conn.execute("UPDATE USER set solved1 = solved2;")
@@ -104,8 +113,8 @@ if __name__ == '__main__':
     # logon_user("rsy56640", "851911672@qq.com", False)
     # logon_user("rauthy", "3477074483@qq.com", False)
     # logoff_user("934422900@qq.com")
-    logoff_user("3477074483@qq.com")
-    logoff_user("851911672@qq.com")
+    # logoff_user("3477074483@qq.com")
+    # logoff_user("851911672@qq.com")
     # update_yestoday()
     # update_today()
     print(get_data())

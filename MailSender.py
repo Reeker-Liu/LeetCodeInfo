@@ -29,6 +29,7 @@ def send(receivers, subject, content, is_html):
         print(e)
 
 
+
 if __name__ == '__main__':
     body = '''1'''
     send(["934422900@qq.com"], "!23", body, True)

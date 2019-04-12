@@ -1,4 +1,3 @@
-import MailSender
 import DBManager
 
 
@@ -37,6 +36,7 @@ def get_css():
     '''
     return css
 
+
 def pack_table(caption, headers, rows):
     body = '<table class="gridtable" border="1" cellpadding="5">\n'
     body += '<caption>' + caption + '</caption>\n'
@@ -55,7 +55,10 @@ def pack_table(caption, headers, rows):
     body += '</table>'
     return body
 
-def pack_daily_content(td_ranks, all_ranks, new_users):
+
+def pack_daily_content():
+    td_ranks, all_ranks, t = get_formatted_info()
+
     temp_list = []
     rank = 1
     for row in td_ranks:
@@ -73,7 +76,7 @@ def pack_daily_content(td_ranks, all_ranks, new_users):
     content = get_css()
     headers = ["Rank", "User ID", "Solved"]
     content += pack_table("Today Rank", headers, td_ranks)
-    content += '<br><br>'
+    content += '<br>'
     content += pack_table("Leaderboard", headers, all_ranks)
     content += '''
     <font size="1" color="gray">
@@ -94,7 +97,6 @@ def get_formatted_info():
     all_ranks = []
     new_users = []
     infos = DBManager.get_data()
-    receivers = [info[1] for info in infos]
     for info in infos:
         if not info[4]:
             all_ranks.append([info[0], info[3]])
@@ -104,18 +106,13 @@ def get_formatted_info():
                 new_users.append(info[0])
     td_ranks.sort(key=lambda x:x[1], reverse=True)
     all_ranks.sort(key=lambda x:x[1], reverse=True)
-    return  td_ranks, all_ranks, new_users, receivers
+    return  td_ranks, all_ranks, new_users
 
-def daily_job():
-    DBManager.update_yestoday()
-    DBManager.update_today()
-    td_ranks, all_ranks, new_users, receivers = get_formatted_info()
-    content = pack_daily_content(td_ranks, all_ranks, new_users)
-    # print(content)
-    MailSender.send(receivers, 'Daily LeetCode Notice', content, True)
-    print("daily job done")
+
+
+
+
 
 
 if __name__ == '__main__':
-    daily_job()
     print("done")
