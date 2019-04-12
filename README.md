@@ -38,5 +38,9 @@
 - 正文内容随意
   
 <br><br>
+
+由于项目是临时起意，用一天多抽空糊出来的，基本没做异常处理，随时会崩，如发现任何zz情况请联系`ruikang_liu@foxmail.com`*
+
+<br><br>
   
-__- 欢迎加入leetcode交流群：[730372043](//shang.qq.com/wpa/qunwpa?idkey=1a705940f91fff749a5048d09a5382b81e1fac23ffe33a4bd223120f4a6e37de) -__
+__- 欢迎大佬们加入leetcode交流群：[730372043](//shang.qq.com/wpa/qunwpa?idkey=1a705940f91fff749a5048d09a5382b81e1fac23ffe33a4bd223120f4a6e37de) -__
