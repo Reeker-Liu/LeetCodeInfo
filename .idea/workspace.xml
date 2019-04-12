@@ -4,9 +4,6 @@
     <list default="true" id="34a0d31f-cc76-49c5-a101-ed14fd9aff0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info.db" afterPath="$PROJECT_DIR$/info.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DBManager.py" afterPath="$PROJECT_DIR$/DBManager.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InfoGetter.py" afterPath="$PROJECT_DIR$/InfoGetter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MailReceiver.py" afterPath="$PROJECT_DIR$/MailReceiver.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -78,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MailReceiver.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MailReceiver.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MailReceiver.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="416">
@@ -105,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Plan.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Plan.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Plan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="0">
               <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
@@ -211,7 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.DBManager">
+  <component name="RunManager" selected="Python.Plan">
     <configuration name="DBManager" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -243,24 +240,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LeetCodeInfo" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/InfoGetter.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="InfoHandler" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LeetCodeInfo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/InfoHandler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -301,20 +280,37 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="Plan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LeetCodeInfo" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Plan.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.InfoHandler" />
-      <item index="1" class="java.lang.String" itemvalue="Python.DBManager" />
-      <item index="2" class="java.lang.String" itemvalue="Python.MailReceiver" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Listener" />
-      <item index="4" class="java.lang.String" itemvalue="Python.InfoGetter" />
+      <item index="0" class="java.lang.String" itemvalue="Python.DBManager" />
+      <item index="1" class="java.lang.String" itemvalue="Python.MailReceiver" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Listener" />
+      <item index="3" class="java.lang.String" itemvalue="Python.InfoGetter" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Plan" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.DBManager" />
-        <item index="1" class="java.lang.String" itemvalue="Python.InfoGetter" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Listener" />
-        <item index="3" class="java.lang.String" itemvalue="Python.MailReceiver" />
-        <item index="4" class="java.lang.String" itemvalue="Python.InfoHandler" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Plan" />
+        <item index="1" class="java.lang.String" itemvalue="Python.DBManager" />
+        <item index="2" class="java.lang.String" itemvalue="Python.InfoGetter" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Listener" />
+        <item index="4" class="java.lang.String" itemvalue="Python.MailReceiver" />
       </list>
     </recent_temporary>
   </component>
@@ -500,16 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Plan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/InfoHandler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -549,6 +535,16 @@
           <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
