@@ -52,17 +52,15 @@ def handle_mail(sender, subject):
     if elements[0] == "DY":
         if len(elements) == 2:
             DBManager.logon_user(elements[1], sender, 0)
-            DBManager.update_today()
             MailSender.send(sender, 'Reply to DY', 'register successfully', False)
         else:
             DBManager.logon_user(elements[0], sender, 1)
-            DBManager.update_today()
             MailSender.send(sender, 'Reply to DY', 'register successfully as an auditor', False)
     elif elements[0] == "TD":
         DBManager.logoff_user(sender)
-        DBManager.update_today()
         MailSender.send(sender, 'Reply to TD', 'quit successfully', False)
     elif elements[0] == "CX":
+        DBManager.update_today()
         content = InfoHandler.pack_daily_content()
         MailSender.send(sender, 'Reply to CX', content, True)
     return
