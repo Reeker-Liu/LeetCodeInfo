@@ -7,6 +7,13 @@ from email.policy import default
 
 
 def check_mail():
+    try:
+        fetch_mail()
+    except:
+        print("log error")
+
+
+def fetch_mail():
     # 输入邮件地址, 口令和POP3服务器地址:
     mail_user = "leetcodegroup@qq.com"
     mail_pass = "uhkogqwtiuwrdihj"

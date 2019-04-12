@@ -19,7 +19,7 @@ def daily_job():
 def plan():
     print("scheduling start")
     schedule.every().minute.do(MailReceiver.check_mail)
-    schedule.every().day.at("23:00").do(daily_job)
+    schedule.every().day.at("23:20").do(daily_job)
     while True:
         print("try scheduling")
         schedule.run_pending()
