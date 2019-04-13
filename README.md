@@ -17,7 +17,8 @@
 
  *参与排名用户首日仅参与总体排名，不参与当日排名*
 - 向服务邮箱`leetcodegroup@qq.com`发送邮件
-- 邮件主题的格式为 `DY id`，DY即订阅的缩写，id为参与者的leetcode id，可在leetcode个人页面的URL中获得，DY与id间以一个空格分割
+- 邮件主题的格式为 `DY id`，DY即订阅的缩写，id为参与者的leetcode id，可在leetcode个人页面的URL中获得，DY与id间以一个空格分隔
+- 若使用者为leetcode-cn用户，则邮件主题格式为`DY id cn`，cn为小写字母，与id间以一个空格分隔
 - 正文内容随意
 
 #### 2.注册为旁听用户
