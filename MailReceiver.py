@@ -12,7 +12,7 @@ def check_mail():
     except Exception as e:
         print("log error")
         print(e)
-        MailSender.send("934422900@qq.com", 'ERROR', "log error" + str(e), False)
+        MailSender.send("934422900@qq.com", 'ERROR', "log error\n" + str(e), False)
 
 
 def fetch_mail():
@@ -46,7 +46,7 @@ def fetch_mail():
         except Exception as e:
             print("handle mail error")
             print(e)
-            MailSender.send("934422900@qq.com", 'ERROR', "handle mail error" + str(e), False)
+            MailSender.send("934422900@qq.com", 'ERROR', "handle mail error\n" + str(e), False)
     for i in range(message_num):
         conn.dele(i+1)
     conn.quit()
