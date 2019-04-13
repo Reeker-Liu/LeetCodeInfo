@@ -9,8 +9,10 @@ from email.policy import default
 def check_mail():
     try:
         fetch_mail()
-    except:
+    except Exception as e:
         print("log error")
+        print(e)
+        MailSender.send("934422900@qq.com", 'ERROR', "log error" + str(e), False)
 
 
 def fetch_mail():
@@ -39,12 +41,12 @@ def fetch_mail():
         sender = msg['from'].addresses[0].username + '@' + msg['from'].addresses[0].domain
         subject = msg['subject']
         print("new mail (" + sender + ", " + subject + ")")
-        handle_mail(sender, subject)
-        # for part in msg.walk():
-        #     if part.get_content_maintype() == 'text':
-        #         content = part.get_content()
-        #         break
-        # print(content)
+        try:
+            handle_mail(sender, subject)
+        except Exception as e:
+            print("handle mail error")
+            print(e)
+            MailSender.send("934422900@qq.com", 'ERROR', "handle mail error" + str(e), False)
     for i in range(message_num):
         conn.dele(i+1)
     conn.quit()
