@@ -2,6 +2,9 @@
 > automatical reminder of daily LeetCode for qq group via email  
 > 通过邮件为参与成员发送每日LeetCode刷题情况/排名
 
+## 邮件示例
+![example](example.png)
+
 # 使用方式
 *所有服务均通过邮件系统获得，服务提供邮箱为 `leetcodegroup@qq.com`*
 
